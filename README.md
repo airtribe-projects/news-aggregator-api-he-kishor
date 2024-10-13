@@ -78,7 +78,8 @@ This API manages user services and delivers personalized news data fetched from 
     ```
 reposponse body:
 
-```json{
+```json
+{
     "fname": "Vijay",
     "lname": "Ghandhi",
     "email": "vijayghandi@gmail.com",
@@ -88,7 +89,10 @@ reposponse body:
     "createdAt": "2024-10-13T13:27:11.066Z",
     "updatedAt": "2024-10-13T13:27:11.066Z",
     "__v": 0
-}```
+   }  
+```
+
+
 * **login user info**
   
     **Post** `http://localhost:3000/api/users/login`
@@ -140,7 +144,7 @@ Response:
     ![image](https://github.com/user-attachments/assets/d92a91ef-3723-4ff8-94e5-245a7021b6d2)
 
 
-* **Get the headlines base on preference **
+* **Get the headlines base on preference**
 
 **Get** `http://localhost:3000/api/news/headlines`
 
@@ -148,7 +152,7 @@ Response:
  ![image](https://github.com/user-attachments/assets/bff34b58-cf15-41a3-bb12-2503c21da5de)
 
 
-* **Get the article based on preference **
+* **Get the article based on preference**
 
 I use pagination here where the user can only fetch 30 JSON objects at one, and then pass the number
 
@@ -161,7 +165,7 @@ I use pagination here where the user can only fetch 30 JSON objects at one, and 
 
 
 
-* **Mark as read article **
+* **Mark as read article**
 
 **Post** `http://localhost:3000/api/news/read`
   * this method need the token
@@ -172,7 +176,7 @@ I use pagination here where the user can only fetch 30 JSON objects at one, and 
    Response:
      ![image](https://github.com/user-attachments/assets/23ec7ad6-b280-42c8-9797-b1d8de9636df)
 
-* **Get as read article **
+* **Get as read article**
 **Get** `http://localhost:3000/api/news/read`
   * this method need the token
  
