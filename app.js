@@ -1,16 +1,30 @@
-const express = require('express');
-const app = express();
-const port = 3000;
+require('dotenv').config();
+const express=require('express');
+const connecDB=require('./Shared/dbconnect');
+const Routes=require('./gateway/routes/route');
+const { logger } = require('./setups/middleware');
 
+const app=express();
+
+//middleware
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(logger);
 
-app.listen(port, (err) => {
-    if (err) {
-        return console.log('Something bad happened', err);
-    }
-    console.log(`Server is listening on ${port}`);
+
+//simple get method
+app.get("/",(req,res)=>{
+   return res.send("Welcome in authentication and authorization")
 });
+//user route
+app.use("/api",Routes);
+const PORT=process.env.PORT;
+
+//connect db then server will start 
+connecDB().then(()=>{
+    app.listen(PORT,()=>{
+        console.log('The server is running on the port 3003');
+    });
+})
 
 
 
