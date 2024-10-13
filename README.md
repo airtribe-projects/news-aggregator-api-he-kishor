@@ -71,6 +71,7 @@ I used three database
 
 
 * **Prefrences**
+  
   { category:{type:String, required:false},
     language:{type:String, required:false},
     sortby:{type:String},
@@ -80,6 +81,8 @@ I used three database
     u_id:{type:String, required:true,  unique: true }}
 
 *  **ArticleRead**
+
+  
   { source: {
         id: { type: String, default: null },  
         name: { type: String }
