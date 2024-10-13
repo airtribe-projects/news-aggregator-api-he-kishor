@@ -1,6 +1,6 @@
 # User Services & News API
 
-This API manages user services and delivers personalized news data fetched from a third-party API, based on user preferences.
+This API manages user services and delivers personalized news data fetched from a third-party API, based on user preferences.I have pass all test case in the postman
 
 ## Features
 
@@ -54,7 +54,47 @@ This API manages user services and delivers personalized news data fetched from 
     npm run dev
     ```
 
+## API Endpoints
+I used three database 
+* **User**
+ 
+    { 
+   "fname": { "type": "String", "required": true },
+  "lname": { "type": "String", "required": true },
+  "email": { "type": "String", "required": true, "unique": true },
+  "pass": { "type": "String", "required": true },
+  "role": { "type": "String", "required": true },
+  "gender": { "type": "String", "required": true },
+  "passwordChangedAt": { "type": "Date" },
+  "lastLoginAt": { "type": "Date" }
+    }
 
+
+* **Prefrences**
+  { category:{type:String, required:false},
+    language:{type:String, required:false},
+    sortby:{type:String},
+    country:{type:String},
+    from_date:{type:Date},
+    to_date:{type:Date},
+    u_id:{type:String, required:true,  unique: true }}
+
+*  **ArticleRead**
+  { source: {
+        id: { type: String, default: null },  
+        name: { type: String }
+    },
+    author: { type: String, default: null },  
+    title: { type: String, required:true}, 
+    description: { type: String, default: null },  
+    url: { type: String },  
+    urlToImage: { type: String, default: null },  
+    publishedAt: { type: Date }, 
+    content: { type: String, default: null },
+    u_id : {type: String, required: true}}
+
+
+   
 ## API Endpoints
 
 ### User Services
